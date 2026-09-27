@@ -1,0 +1,26 @@
+{
+  "name": "minecraft-launcher",
+  "version": "1.0.0",
+  "description": "Custom Minecraft Launcher",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^38.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.minecraftlauncher.custom",
+    "productName": "Minecraft Launcher",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
