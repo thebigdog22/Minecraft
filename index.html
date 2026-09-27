@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Minecraft Launcher</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 30px;
+      background: #222;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 0;
+    }
+
+    p {
+      color: #aaa;
+    }
+
+    .buttons {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    button {
+      width: 350px;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+    }
+
+    #status {
+      margin-top: 40px;
+      color: #7cff7c;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>MINECRAFT</h1>
+    <p>Custom Minecraft Launcher</p>
+  </header>
+
+  <div class="buttons">
+
+    <button onclick="launch('minecraft')">
+      PLAY MINECRAFT
+    </button>
+
+    <button onclick="launch('dungeons')">
+      MINECRAFT DUNGEONS
+    </button>
+
+    <button onclick="launch('legends')">
+      MINECRAFT LEGENDS
+    </button>
+
+    <button onclick="launch('education')">
+      MINECRAFT EDUCATION
+    </button>
+
+  </div>
+
+  <div id="status">
+    Ready
+  </div>
+
+  <script>
+    async function launch(game) {
+      const result = await window.launcher.launchGame(game);
+
+      document.getElementById("status").textContent =
+        result.message;
+    }
+  </script>
+
+</body>
+</html>
